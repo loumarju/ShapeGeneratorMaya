@@ -24,8 +24,8 @@ class ShapeGenerator:
         if shape_type == 'hand':
             return self.create_hand(shape_name)
 
-        if shape_type == 'fourArrows':
-            return self.create_fourarrows(shape_name)
+        if shape_type == 'arrows':
+            return self.create_arrows(shape_name)
 
         if shape_type == 'semisphere':
             return self.create_semisphere(shape_name)
@@ -158,15 +158,15 @@ class ShapeGenerator:
 
         return hand
 
-    def create_fourarrows(self, shape_name):
-        fourarrows = cmds.curve(name=shape_name, d=1,
+    def create_arrows(self, shape_name):
+        arrows = cmds.curve(name=shape_name, d=1,
                          p=[(-5, 0, 0), (-3, 0, -2), (-3, 0, -1), (-1, 0, -1), (-1, 0, -3), (-2, 0, -3), (0, 0, -5),
                             (2, 0, -3),
                             (1, 0, -3), (1, 0, -1), (3, 0, -1), (3, 0, -2), (5, 0, 0), (3, 0, 2), (3, 0, 1), (1, 0, 1),
                             (1, 0, 3),
                             (2, 0, 3), (0, 0, 5), (-2, 0, 3), (-1, 0, 3), (-1, 0, 1), (-3, 0, 1), (-3, 0, 2),
                             (-5, 0, 0)])
-        return fourarrows
+        return arrows
 
     def create_semisphere(self, shape_name):
         semisphere = cmds.curve(name=shape_name, d=1,  p=[(-6.283766, 0, 9.1204e-010), (-6.203579, 0, -0.982165), (-5.969952, 0, -1.939507), (-5.592832, 0, -2.849955),
@@ -290,5 +290,5 @@ class ShapeGenerator:
         return square
 
     def create_circle(self, shape_name):
-        circle = cmds.circle(name=shape_name, d=1, nr =(0, 1, 0))
+        circle = cmds.circle(name=shape_name, nr=(0, 1, 0))
         return circle

@@ -1,5 +1,7 @@
 import maya.cmds as cmds
 from shapeGenerator import ShapeGenerator
+import shapeGenerator
+reload(shapeGenerator)
 
 class HierarchyGenerator:
     def __init__(self, group_type, group_name='', sufix_name='n_00',
